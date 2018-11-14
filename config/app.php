@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -224,6 +225,7 @@ return [
         'Schema' => Illuminate\Support\Facades\Schema::class,
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
+        'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
