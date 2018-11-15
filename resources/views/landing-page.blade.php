@@ -38,8 +38,8 @@
                     <h1>Laravel Ecommerce Demo</h1>
                     <p>Includes multiple products, categories, a shopping cart and a checkout system with Stripe integration.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="button button-white">Blog Post</a>
-                        <a href="#" class="button button-white">GitHub</a>
+                        <a href="https://aepnat.github.io/laravel-ecommerce/" class="button button-white">Github Page</a>
+                        <a href="https://github.com/aepnat/laravel-ecommerce" class="button button-white">GitHub Repo</a>
                     </div>
                 </div> <!-- end hero-copy -->
 
