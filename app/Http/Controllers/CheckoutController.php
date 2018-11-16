@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderPlaced;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\CheckoutRequest;
 use App\Order;
 use App\OrderProduct;
 use Cart;
 use Stripe;
+
 use Cartalyst\Stripe\Exception\CardErrorException;
 
 class CheckoutController extends Controller
@@ -63,7 +66,8 @@ class CheckoutController extends Controller
                 ]
             ]);
 
-            $this->addToOrdersTabel($request, null);
+            $order = $this->addToOrdersTabel($request, null);
+            Mail::send(new OrderPlaced($order));
 
             // SUCCESSFULL
             Cart::instance('default')->destroy();
@@ -106,6 +110,8 @@ class CheckoutController extends Controller
                 'quantity' => $item->qty
             ]);
         }
+
+        return $order;
     }
 
     private function getNumbers()
